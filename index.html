@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ElectroMásCrédito - Día de la Madre</title>
+  <title>Día de la Madre | ElectroMásCrédito</title>
   <style>
+    :root {
+      --vino: #7b1e3a;
+      --mostaza: #ffcc00;
+      --azul: #1a2a6c;
+      --gris-claro: #f8f8f8;
+      --gris-oscuro: #333;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,13 +21,12 @@
     }
 
     body {
-      background: #fefefe;
-      color: #333;
-      line-height: 1.6;
+      background: white;
+      color: var(--gris-oscuro);
     }
 
     header {
-      background-color: #8B0000;
+      background: var(--vino);
       color: white;
       padding: 1rem 2rem;
       display: flex;
@@ -28,121 +35,142 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     header img {
-      height: 50px;
+      height: 48px;
     }
 
     header a {
-      background-color: #ffd700;
+      background: var(--mostaza);
       color: #000;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 5px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    header a:hover {
+      background: #e6b800;
     }
 
     .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 4rem 2rem;
-      background: url('https://i.imgur.com/q3oYlLT.jpg') no-repeat center/cover;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://i.imgur.com/q3oYlLT.jpg') center/cover no-repeat;
       color: white;
+      text-align: center;
+      padding: 6rem 2rem;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 1rem;
-      border-radius: 10px;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
     }
 
     .hero p {
-      margin: 1rem 0;
-      background-color: rgba(0, 0, 0, 0.3);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
     }
 
     .hero a {
-      background-color: #ffd700;
+      background: var(--mostaza);
       color: #000;
-      padding: 0.75rem 1.5rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 6px;
       text-decoration: none;
-      border-radius: 8px;
       font-weight: bold;
-      margin-top: 1rem;
+      transition: background 0.3s;
     }
 
-    .promos, .beneficios, .testimonios, .contacto {
-      padding: 3rem 2rem;
+    .hero a:hover {
+      background: #e6b800;
     }
 
-    .promos h2, .beneficios h2, .testimonios h2, .contacto h2 {
-      color: #8B0000;
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
       text-align: center;
+      color: var(--vino);
+      font-size: 2rem;
       margin-bottom: 2rem;
     }
 
     .promo-grid {
       display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
 
     .promo {
-      background: #fff8dc;
-      padding: 1rem;
-      border: 1px solid #ddd;
+      background: var(--gris-claro);
       border-radius: 10px;
+      padding: 1.5rem;
       text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     .promo img {
       width: 100%;
-      height: auto;
-      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .promo h3 {
+      margin-bottom: 0.5rem;
     }
 
     .beneficios ul {
       list-style: none;
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto;
     }
 
     .beneficios li {
-      background: #f0f0f0;
-      margin: 0.5rem 0;
-      padding: 0.75rem 1rem;
-      border-left: 6px solid #8B0000;
+      background: white;
+      margin: 0.75rem 0;
+      padding: 1rem;
+      border-left: 5px solid var(--azul);
       border-radius: 5px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
     }
 
     .testimonio {
       display: flex;
       gap: 1rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      padding: 1.2rem;
       align-items: center;
       margin-bottom: 1.5rem;
-      background-color: #fafafa;
-      padding: 1rem;
-      border-radius: 10px;
     }
 
     .testimonio img {
       width: 80px;
+      height: 80px;
+      object-fit: cover;
       border-radius: 50%;
-      border: 2px solid #8B0000;
+      border: 3px solid var(--vino);
+    }
+
+    .testimonio p {
+      margin: 0;
     }
 
     form {
       max-width: 500px;
-      margin: 0 auto;
-      background: #fff8dc;
+      margin: auto;
+      background: #fff;
       padding: 2rem;
       border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     form input, form textarea {
@@ -154,10 +182,10 @@
     }
 
     form button {
-      background: #8B0000;
+      background: var(--vino);
       color: white;
       border: none;
-      padding: 0.75rem;
+      padding: 0.8rem;
       width: 100%;
       border-radius: 5px;
       font-size: 1rem;
@@ -165,87 +193,87 @@
     }
 
     footer {
-      background-color: #333;
-      color: white;
+      background: #111;
+      color: #aaa;
       text-align: center;
-      padding: 1rem 0;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.75rem;
-      }
+      .hero h1 { font-size: 2rem; }
+      .testimonio { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://i.imgur.com/Uy3pPzJ.png" alt="ElectroMásCrédito Logo" />
-    <a href="https://wa.me/593999999999?text=*¡Hola ElectroMásCrédito!*%0AEstoy interesado en una promoción por el Día de la Madre.">Contáctenos</a>
+    <img src="https://i.imgur.com/Uy3pPzJ.png" alt="ElectroMásCrédito">
+    <a href="https://wa.me/593999999999?text=*Hola ElectroMásCrédito*%0AQuiero información por el Día de la Madre">WhatsApp</a>
   </header>
 
   <section class="hero">
-    <h1>¡Celebre a mamá con los mejores electrodomésticos!</h1>
-    <p>Ofertas increíbles, crédito inmediato y entrega a domicilio.</p>
-    <a href="#contacto">Cotizar ahora</a>
+    <h1>Para la Reina del hogar… lo mejor en electrodomésticos</h1>
+    <p>¡Sorprenda a mamá con crédito inmediato, entrega gratis y promociones exclusivas!</p>
+    <a href="#contacto">Solicitar crédito</a>
   </section>
 
-  <section class="promos">
-    <h2>Promociones destacadas</h2>
+  <section>
+    <h2>Ofertas por el Día de la Madre</h2>
     <div class="promo-grid">
       <div class="promo">
-        <img src="https://i.imgur.com/OYVQ4rQ.jpg" alt="Refrigeradora">
+        <img src="https://i.imgur.com/OYVQ4rQ.jpg" alt="Refrigeradora Samsung">
         <h3>Refrigeradora Samsung</h3>
-        <p>Crédito sin entrada. Desde $25/mes.</p>
+        <p>Desde $25/mes sin entrada</p>
       </div>
       <div class="promo">
-        <img src="https://i.imgur.com/2iV6jqY.jpg" alt="Lavadora">
+        <img src="https://i.imgur.com/2iV6jqY.jpg" alt="Lavadora LG">
         <h3>Lavadora LG 20kg</h3>
-        <p>Entrega inmediata. Desde $20/mes.</p>
+        <p>Crédito al instante desde $20/mes</p>
       </div>
       <div class="promo">
-        <img src="https://i.imgur.com/tpmf0yN.jpg" alt="Cocina">
+        <img src="https://i.imgur.com/tpmf0yN.jpg" alt="Cocina Mabe">
         <h3>Cocina Mabe 5 hornillas</h3>
-        <p>Ideal para mamá. Desde $18/mes.</p>
+        <p>Ideal para mamá. Desde $18/mes</p>
       </div>
     </div>
   </section>
 
   <section class="beneficios">
-    <h2>¿Por qué elegir ElectroMásCrédito?</h2>
+    <h2>¿Por qué elegirnos?</h2>
     <ul>
-      <li>Crédito fácil y rápido con solo cédula.</li>
-      <li>Electrodomésticos de alta calidad.</li>
-      <li>Entregas a nivel nacional.</li>
-      <li>Atención personalizada por WhatsApp.</li>
+      <li>Crédito con cédula en minutos</li>
+      <li>Electrodomésticos con garantía y respaldo</li>
+      <li>Promociones exclusivas por el Día de la Madre</li>
+      <li>Asesoría personalizada por WhatsApp</li>
     </ul>
   </section>
 
-  <section class="testimonios">
-    <h2>Clientes felices</h2>
+  <section>
+    <h2>Testimonios reales</h2>
     <div class="testimonio">
       <img src="https://i.imgur.com/8N1zcuN.jpg" alt="Daniela">
-      <p><strong>Daniela R.:</strong> “Compré una lavadora para mi madre y quedó feliz. ¡Gracias ElectroMásCrédito!”</p>
+      <p><strong>Daniela R.:</strong> “Me ayudaron a sorprender a mi mamá. La entrega fue inmediata.”</p>
     </div>
     <div class="testimonio">
       <img src="https://i.imgur.com/f84fP52.jpg" alt="Marco">
-      <p><strong>Marco G.:</strong> “Me sorprendió la rapidez de entrega y la facilidad del crédito. 100% recomendados.”</p>
+      <p><strong>Marco G.:</strong> “Increíble atención, el crédito fue muy rápido. ¡Gracias!”</p>
     </div>
   </section>
 
-  <section class="contacto" id="contacto">
+  <section id="contacto">
     <h2>Solicite su crédito ahora</h2>
     <form>
-      <input type="text" name="nombre" placeholder="Su nombre completo" required>
-      <input type="tel" name="telefono" placeholder="Número de WhatsApp" required>
-      <textarea name="mensaje" placeholder="Producto de interés y ciudad" rows="4" required></textarea>
+      <input type="text" name="nombre" placeholder="Nombre completo" required />
+      <input type="tel" name="telefono" placeholder="WhatsApp" required />
+      <textarea name="mensaje" rows="4" placeholder="Producto de interés y ciudad" required></textarea>
       <button type="submit">Enviar solicitud</button>
     </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 ElectroMásCrédito | Todos los derechos reservados</p>
+    &copy; 2025 ElectroMásCrédito — Todos los derechos reservados
   </footer>
 
 </body>
