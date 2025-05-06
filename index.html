@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectroMásCrédito - Día de la Madre</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #fefefe;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #8B0000;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    header a {
+      background-color: #ffd700;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: url('https://i.imgur.com/q3oYlLT.jpg') no-repeat center/cover;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    .hero p {
+      margin: 1rem 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+
+    .hero a {
+      background-color: #ffd700;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .promos, .beneficios, .testimonios, .contacto {
+      padding: 3rem 2rem;
+    }
+
+    .promos h2, .beneficios h2, .testimonios h2, .contacto h2 {
+      color: #8B0000;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .promo-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .promo {
+      background: #fff8dc;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .promo img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .beneficios ul {
+      list-style: none;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .beneficios li {
+      background: #f0f0f0;
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      border-left: 6px solid #8B0000;
+      border-radius: 5px;
+    }
+
+    .testimonio {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      background-color: #fafafa;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    .testimonio img {
+      width: 80px;
+      border-radius: 50%;
+      border: 2px solid #8B0000;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff8dc;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background: #8B0000;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://i.imgur.com/Uy3pPzJ.png" alt="ElectroMásCrédito Logo" />
+    <a href="https://wa.me/593999999999?text=*¡Hola ElectroMásCrédito!*%0AEstoy interesado en una promoción por el Día de la Madre.">Contáctenos</a>
+  </header>
+
+  <section class="hero">
+    <h1>¡Celebre a mamá con los mejores electrodomésticos!</h1>
+    <p>Ofertas increíbles, crédito inmediato y entrega a domicilio.</p>
+    <a href="#contacto">Cotizar ahora</a>
+  </section>
+
+  <section class="promos">
+    <h2>Promociones destacadas</h2>
+    <div class="promo-grid">
+      <div class="promo">
+        <img src="https://i.imgur.com/OYVQ4rQ.jpg" alt="Refrigeradora">
+        <h3>Refrigeradora Samsung</h3>
+        <p>Crédito sin entrada. Desde $25/mes.</p>
+      </div>
+      <div class="promo">
+        <img src="https://i.imgur.com/2iV6jqY.jpg" alt="Lavadora">
+        <h3>Lavadora LG 20kg</h3>
+        <p>Entrega inmediata. Desde $20/mes.</p>
+      </div>
+      <div class="promo">
+        <img src="https://i.imgur.com/tpmf0yN.jpg" alt="Cocina">
+        <h3>Cocina Mabe 5 hornillas</h3>
+        <p>Ideal para mamá. Desde $18/mes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="beneficios">
+    <h2>¿Por qué elegir ElectroMásCrédito?</h2>
+    <ul>
+      <li>Crédito fácil y rápido con solo cédula.</li>
+      <li>Electrodomésticos de alta calidad.</li>
+      <li>Entregas a nivel nacional.</li>
+      <li>Atención personalizada por WhatsApp.</li>
+    </ul>
+  </section>
+
+  <section class="testimonios">
+    <h2>Clientes felices</h2>
+    <div class="testimonio">
+      <img src="https://i.imgur.com/8N1zcuN.jpg" alt="Daniela">
+      <p><strong>Daniela R.:</strong> “Compré una lavadora para mi madre y quedó feliz. ¡Gracias ElectroMásCrédito!”</p>
+    </div>
+    <div class="testimonio">
+      <img src="https://i.imgur.com/f84fP52.jpg" alt="Marco">
+      <p><strong>Marco G.:</strong> “Me sorprendió la rapidez de entrega y la facilidad del crédito. 100% recomendados.”</p>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <h2>Solicite su crédito ahora</h2>
+    <form>
+      <input type="text" name="nombre" placeholder="Su nombre completo" required>
+      <input type="tel" name="telefono" placeholder="Número de WhatsApp" required>
+      <textarea name="mensaje" placeholder="Producto de interés y ciudad" rows="4" required></textarea>
+      <button type="submit">Enviar solicitud</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ElectroMásCrédito | Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>
